@@ -3,14 +3,15 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            message: 'Hello Vue!',
+            albums: [],
         }
     },
     mounted() {
         axios
             .get('server.php')
             .then(response => {
-                console.log("response", response);
+                console.log(response);
+                this.albums = response.data
             })
     }
 

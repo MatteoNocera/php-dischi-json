@@ -27,7 +27,7 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato. */
 <body class="bg-dark bg-gradient">
 
     <div id="app">
-        <div class="header">
+        <div class="header bg-black bg-gradient">
             <div class="container">
                 <nav class="navbar navbar-expand navbar-light">
                     <div class="nav navbar-nav">
@@ -45,16 +45,16 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato. */
         </div>
 
 
-        <div class="container py-5 bg-secondary">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
-                <div class="col">
+        <div class="container p-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center g-5 px-2">
 
-                    <div class="card p-3 text-center">
-                        <img src="" class="card-img-top" alt="...">
+                <div class="col" v-for="album in albums">
+                    <div class="card text-center h-100 bg-black bg-gradient text-white">
+                        <img :src="album.poster" class="card-img-top p-5" :alt="album.title">
                         <div class="card-body">
-                            <h3 class="card-title">Card title</h3>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <h4>data</h4>
+                            <h3 class="card-title">{{ album.title }}</h3>
+                            <p class="card-text">{{album.author}}</p>
+                            <h4>{{album.year}}</h4>
                         </div>
                     </div>
 
