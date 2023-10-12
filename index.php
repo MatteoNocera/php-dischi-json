@@ -48,9 +48,39 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato. */
         <div class="container p-5">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center g-5 px-2">
 
-                <div class="col" v-for="album in albums">
+                <div class="col" v-for="(album, index) in albums">
                     <div class="card text-center h-100 bg-black bg-gradient text-white">
-                        <img :src="album.poster" class="card-img-top p-5" :alt="album.title">
+
+                        <img :src="album.poster" class="card-img-top p-5" :alt="album.title" data-bs-toggle="modal" :data-bs-target="'#myModal' + index">
+
+
+                        <!-- myModal -->
+
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal fade top-50 start-50 translate-middle" :id="'myModal' + index" tabindex="-1" :aria-labelledby="'myModalLabel' + index" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content bg-black bg-gradient text-white border-secondary">
+                                        <div class="modal-header border-bottom-0 flex-column" data-bs-theme="dark">
+
+                                            <img height="200" :src="album.poster" :alt="album.title">
+                                            <h3 class="card-title">{{ album.title }}</h3>
+                                            <p class="card-text">{{album.author}}</p>
+                                            <h4>{{album.year}}</h4>
+
+
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
                         <div class="card-body">
                             <h3 class="card-title">{{ album.title }}</h3>
                             <p class="card-text">{{album.author}}</p>

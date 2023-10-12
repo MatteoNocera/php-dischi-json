@@ -13,6 +13,11 @@ createApp({
                 console.log(response);
                 this.albums = response.data
             })
-    }
+    },
+    /* methods: {
+        getInfo() {
+            console.log('ciao');
+        }
+    } */
 
 }).mount('#app')
