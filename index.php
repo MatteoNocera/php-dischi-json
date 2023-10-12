@@ -57,13 +57,13 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato. */
                         <!-- myModal -->
 
                         <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal fade top-50 start-50 translate-middle" :id="'myModal' + index" tabindex="-1" :aria-labelledby="'myModalLabel' + index" aria-hidden="true">
+                            <div class="modal fade h-75 top-50 start-50 translate-middle" :id="'myModal' + index" tabindex="-1" :aria-labelledby="'myModalLabel' + index" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content bg-black bg-gradient text-white border-secondary">
                                         <div class="modal-header border-bottom-0 flex-column" data-bs-theme="dark">
 
                                             <img height="200" :src="album.poster" :alt="album.title">
-                                            <h3 class="card-title">{{ album.title }}</h3>
+                                            <h3 class="card-title my-3">{{ album.title }}</h3>
                                             <p class="card-text">{{album.author}}</p>
                                             <h4>{{album.year}}</h4>
 
