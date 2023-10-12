@@ -10,7 +10,7 @@ createApp({
         axios
             .get('server.php')
             .then(response => {
-                console.log(response);
+                console.log("response", response);
             })
     }
 
